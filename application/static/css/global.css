@@ -1,0 +1,21 @@
+#main{
+    min-height: 80vh !important;
+}
+
+#navigation{
+    background-color: rgb(19, 17, 17);
+    
+}
+
+#navigation > a, .nav-item > a{
+    text-decoration: none;
+    color: white;
+}
+
+#navigation > a.active{
+    font-weight: bold;
+}
+
+.nav-item > a.active{
+    background-color: tomato;
+}

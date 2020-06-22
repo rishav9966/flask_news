@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}News::BroadCast{% endblock %}
+
+{% block main %}
+<div>
+    {% if session['logged_in'] %}
+    <div class="float-right h6 p-3">
+        <a href="{{url_for('addnews')}}">Add News</a>
+    </div>
+    {% endif %}
+</div>
+<div style="clear: both;"></div>
+{% if msg %}
+<div class="text-danger display-4">{{msg}}</div>
+{% endif %}
+{% if news_dict %}
+{% for news in news_dict %}
+<div class="row">
+    <div class="col-9">
+        <a href="{{url_for('newsdetails', id=news.id)}}">{{ news.headline }}</a>
+    </div>
+    <div class="col-3">
+        {{news.location}}
+    </div>
+</div>
+<hr style="border-top: 2px solid red;">
+{% endfor %}
+{% endif %}
+{% endblock %}

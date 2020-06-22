@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}The BroadCast{% endblock %}
+
+{% block main %}
+<div class="jumbotron">
+    <div class="h4 font-weight-bold row">
+        <div class="col-lg-9 mb-1">Welcome to The BroadCast News Portal</div>
+        <div class="col-lg-3 mb-1 h6">Launched On:19-Jun-2020</div>
+    </div>
+    <p class="lead">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+    <hr class="my-4" style="border-top: 1px solid red;">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-md" href="{{url_for('news')}}" role="button">Read News</a>
+    </p>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard::BroadCast{% endblock %}
+
+{% block main %}
+    {% if session['logged_in'] %}
+    <div class="row">
+        <div class="offset-10 col-2 h6">
+            <a href="{{url_for('addnews')}}">Add News</a>
+        </div>
+    </div>
+    {% if author_news %}
+        {% for news in author_news %}
+        <div>
+            <a href="{{url_for('newsdetails', id=news.id)}}">{{ news.headline }}</a>
+        </div>    
+        <hr style="border-top: 1px solid red;">
+        {% endfor %}
+    {% endif %}
+    {% if msg %}
+        <div class="mt-5 pt-5 h4">
+            {{msg}}
+        </div>
+    {% endif %}
+    {% endif %}
+{% endblock %}

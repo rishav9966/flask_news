@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-sm" id="navigation">
+    <a class="navbar-brand {% if home %}active{% endif %}" href="{{ url_for('index') }}">The BroadCast</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link {% if news %}active{% endif %}" href="{{ url_for('news') }}">News</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if contact %}active{% endif %}" href="{{ url_for('contact') }}">Contact</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav navbar-right">
+            {% if session['logged_in'] %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('dashboard') }}">Welcome {{session['username']}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link {% if login %}active{% endif %}" href="{{ url_for('login') }}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if register %}active{% endif %}" href="{{ url_for('register') }}">Register</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
